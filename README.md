@@ -17,13 +17,6 @@ This is perfect for learners getting started with GUI programming in Python.
 ✅ Try/Except error handling for invalid input  
 
 ---
-
-## 📷 Screenshot
-
-*(You can add a screenshot of your app here)*
-
----
-
 ## 🚀 How to Run
 
 1. Make sure Python is installed.  
