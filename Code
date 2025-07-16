@@ -1,0 +1,59 @@
+from tkinter import *
+
+# Create main window
+window = Tk()
+window.title("💻 My First GUI App By GD")
+window.geometry("400x400")
+window.config(bg="lightblue")
+
+# ✅ Label
+label = Label(window, text="Type something:", font=("Arial", 14), bg="lightblue")
+label.pack(pady=10)
+
+# ✅ Entry (Input box)
+entry = Entry(window, font=("Arial", 14))
+entry.pack(pady=10)
+
+# ✅ Button (prints what's typed)
+def print_input():
+    user_text = entry.get()
+    result_label.config(text="You typed: " + user_text)
+
+button = Button(window, text="Print it", command=print_input, font=("Arial", 12))
+button.pack(pady=10)
+
+# ✅ Label to show result
+result_label = Label(window, text="", font=("Arial", 14), bg="lightblue")
+result_label.pack(pady=10)
+
+# ✅ Simple Calculator (Add two numbers)
+calc_label = Label(window, text="Simple Calculator (Add Two Numbers)", font=("Arial", 14, "bold"), bg="lightblue")
+calc_label.pack(pady=20)
+
+# Inputs
+num1_entry = Entry(window, font=("Arial", 12))
+num1_entry.pack()
+
+num2_entry = Entry(window, font=("Arial", 12))
+num2_entry.pack()
+
+# Function to calculate
+def add_numbers():
+    try:
+        n1 = float(num1_entry.get())
+        n2 = float(num2_entry.get())
+        total = n1 + n2
+        calc_result.config(text=f"Result: {total}")
+    except ValueError:
+        calc_result.config(text="❌ Enter valid numbers!")
+
+# Button to trigger calculator
+calc_button = Button(window, text="Add", command=add_numbers, font=("Arial", 12))
+calc_button.pack(pady=5)
+
+# Result label
+calc_result = Label(window, text="", font=("Arial", 14), bg="lightblue")
+calc_result.pack(pady=10)
+
+# Keep window running
+window.mainloop()
